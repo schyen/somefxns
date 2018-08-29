@@ -50,7 +50,7 @@
 #'     helps with ensuring y-axis dendrogram labels are not cut off
 #' @param output = string; path and file name of resulting heatmap png
 #'     Example: "/path/to/my_heatmap.png"
-#' @returns
+#' @return
 #'     \code{pdata} dataframe for heatmap
 #'     \code{ddata_x} dataframe for x-axis dendrogram
 #'     \code{ddata_x} dataframe for y-axis dendrogram

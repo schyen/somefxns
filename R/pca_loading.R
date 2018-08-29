@@ -19,19 +19,19 @@ pca_loading = function(pca_data, PCs=1:4, label=NULL, title=NULL)
   #a prcomp function
   if (class(pca_data) != 'prcomp')
   {
-    stop('Input "pca_data" to score_plot_2d must be the output of prcomp() function')
+    stop('Input "pca_data" to pca_loading must be the output of prcomp() function')
   }
 
   #Testing if PCs are numeric
   if (!is.numeric(PCs))
   {
-    stop('Input "PCs" to score_plot_2d must be a vector of numeric values corresponding to target principal components')
+    stop('Input "PCs" to pca_loading must be a vector of numeric values corresponding to target principal components')
   }
 
   #Testing to make sure that PCs are in the input data
   if (any(PCs > ncol(pca_data$rotation)))
   {
-    stop('Input "PCs" to score_plot_2d must not be outside of the pca_data principal component range')
+    stop('Input "PCs" to pca_loading must not be outside of the pca_data principal component range')
   }
 
   #Checking if given labels are in the loading data

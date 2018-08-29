@@ -20,11 +20,6 @@ Imports:
   plyr,
   reshape2,
   stringr
-Collate:
-    'perform_pca.R'
-    'pca_score.R'
-    'pca_loading.R'
-    'generate_heatmap.R'
 RoxygenNote: 6.1.0
 Suggests: knitr,
     rmarkdown

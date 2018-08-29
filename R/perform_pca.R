@@ -9,11 +9,11 @@
 #' @param convert.NA logical; where value is NA, convert value to 0;
 #'     desirable when want to explicitly say missing values are true zeros
 #'     (i.e. below limit of detection) and not missing from analysis
-#'@param scale 'UV' for unit variance, 'UVN' for no unit variance, 'pareto';
+#' @param scale 'UV' for unit variance, 'UVN' for no unit variance, 'pareto';
 #'     default UV
 #' @param center logical; mean centering; default to TRUE
 #'
-#'@return prcomp object; PCA-processed data
+#' @return prcomp object; PCA-processed data
 
 perform_pca <- function(data, sampleID='sample_name', variable, value='value',
                        scale='UV', center = TRUE, convert.NA=FALSE,
