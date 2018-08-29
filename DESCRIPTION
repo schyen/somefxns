@@ -1,0 +1,31 @@
+Package: somefxns
+Type: Package
+Title: Generic Tools to Help with Analysis
+Version: 0.1.0
+Author: person("Sandi", "Yen", role = c("aut", "cre"))
+Description: Some generic functions to help with analysis. 
+       Varied in application and purposes
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Imports:
+  dplyr,
+  ellipse,
+  ggdendro,
+  ggplot2,
+  ggrepel,
+  grid,
+  gridExtra,
+  gtable,
+  plyr,
+  reshape2,
+  stringr
+Collate:
+    'perform_pca.R'
+    'pca_score.R'
+    'pca_loading.R'
+    'generate_heatmap.R'
+RoxygenNote: 6.1.0
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr
