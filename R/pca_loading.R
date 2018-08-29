@@ -98,7 +98,7 @@ pca_loading = function(pca_data, PCs=1:4, label=NULL, title=NULL)
   #the points with text are also highlighted
   if (!is.null(label))
   {
-    p = p + geom_text_repel(aes(x=xPC, y=yPC, label=Text),
+    p = p + ggrepel::geom_text_repel(aes(x=xPC, y=yPC, label=Text),
                       hjust=-0.1, vjust=0, size=3, fontface=2)
 
   }

@@ -154,7 +154,7 @@ pca_score = function(pca_data, PCs=1:2,
   #Adding text only if the "label" descriptor has been provided
   if (!is.null(label))
   {
-   p = p + geom_text_repel(aes_string(x='x.value', y='y.value', label=label),
+   p = p + ggrepel::geom_text_repel(aes_string(x='x.value', y='y.value', label=label),
                      hjust=-0.5, vjust=0.3,
                      size=2.5, fontface='plain', lineheight=0.8)
   }
