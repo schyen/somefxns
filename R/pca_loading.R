@@ -5,8 +5,8 @@
 #' @param label vector of compounds that should be labelled on the score plot;
 #'     to label all compounds (or bins), set label = 'all'
 #' @param title string; title of loading plot
-#' @return list of: 'p' ggplot object with generated plot
-#'                  'collected_data' all the data used to plot pca data
+#' @return list of: \code{p} ggplot object with generated plot
+#'                  \code{collected_data} all the data used to plot pca data
 #'                                   using ggplot2. can use collected_data for
 #'                                   further customization using ggplot
 
@@ -129,5 +129,5 @@ pca_loading = function(pca_data, PCs=1:4, label=NULL, title=NULL)
           panel.border=element_rect(size=2, colour='black'),
           strip.text.x = element_text(size=14, face='bold'))
 
-  return(list('p'=p, 'collected.data'=collected_data))
+  return(list('p'=p, 'collected_data'=collected_data))
 }

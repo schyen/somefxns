@@ -127,7 +127,7 @@ generate_heatmap <- function(data, x_var, y_var, value_var,
     # adding y_label
     new_y_lab <- dplyr::inner_join(new_y_lab, y_meta, by=y_var)
 
-    # resetting strain dendrogram labels to tayonomy (or strain number)
+    # resetting strain dendrogram labels to taxonomy (or strain number)
     ddata_y$label <- new_y_lab[, y_label]
   }
 

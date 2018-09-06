@@ -12,10 +12,10 @@
 #'     (one of the metadata columns)
 #'     specifies the groupings around which ellipses should be drawn
 #'
-#' @return list of: 'p' ggplot object with generated plot
-#'                  'collected_data' all the data used to plot pca data
-#'                                   using ggplot2. can use collected_data for
-#'                                   further customization using ggplot
+#' @return list of: \code{p} ggplot object with generated plot
+#'                  \code{collected_data} all the data used to plot pca data
+#'                      using ggplot2. can use collected_data for
+#'                      further customization using ggplot
 
 #------------------------------------------------------------------------->
 
@@ -54,8 +54,8 @@ pca_score = function(pca_data, PCs=1:2,
   variance = variance**2
   variance = variance/sum(variance)*100
   variance = round(variance, digits=1)
-  #Initializing a new vector to store collected.data
-  collected.data = c()
+  #Initializing a new vector to store collected_data
+  collected_data = c()
 
   #Iterating through the PCs, two at a time.
   for (i in seq(PCs[1], PCs[length(PCs)], by=2))
@@ -64,17 +64,17 @@ pca_score = function(pca_data, PCs=1:2,
     view.data$view.var = paste('PC', i, '(', variance[i,], '%) ','vs.',
                                'PC', i+1,'(', variance[i+1,], '%)')
 
-    #Adding to collected.data
-    collected.data = rbind(collected.data, view.data)
+    #Adding to collected_data
+    collected_data = rbind(collected_data, view.data)
   }
 
   #Converting View to factor, preserving ordering
-  collected.data$view.var = factor(collected.data$view.var,
-                                   levels=unique(collected.data$view.var))
+  collected_data$view.var = factor(collected_data$view.var,
+                                   levels=unique(collected_data$view.var))
 
   #Iterating through the PCs, two at a time, to draw ellipse for 95% confidence
 
-  ellipse_custom <- function(d, x='x.value', y='y.value', axes='view')
+  ellipse_custom <- function(d, x='x_value', y='y_value', axes='view')
   {
 
     df <- d[d$view == unique(d[,axes]),]
@@ -95,7 +95,7 @@ pca_score = function(pca_data, PCs=1:2,
   {
     for(i in seq(PCs[1], PCs[length(PCs)], by=2))
     {
-      elp <- plyr::ddply(collected.data[collected.data$x.PC==i,],
+      elp <- plyr::ddply(collected_data[collected_data$x.PC==i,],
                    CIgroup, ellipse_custom)
 
       #putting each elp interation into one dataframe
@@ -104,33 +104,33 @@ pca_score = function(pca_data, PCs=1:2,
   }
 
   #Calculating plot limits
-  xlimit = max(abs(collected.data$x.value))*1.15
-  ylimit = max(abs(collected.data$y.value))*1.1
+  xlimit = max(abs(collected_data$x_value))*1.15
+  ylimit = max(abs(collected_data$y_value))*1.1
 
   #Generating plot-------------------------------------------------------------------
 
-  p = ggplot(collected.data)
+  p = ggplot(collected_data)
 
   #If size descriptor has been specified, use it as an aesthetic,
    if(!is.null(size)) {
-    p = p + geom_point(aes_string(x='x.value', y='y.value',
+    p = p + geom_point(aes_string(x='x_value', y='y_value',
                            colour=colour, shape=shape, size=size), alpha=0.8)
   }
   else
   { #otherwise, default to point size 3 and make points with black outline
     if(outline==TRUE){
-      p = p + geom_point(aes_string(x='x.value', y='y.value', shape=shape),
+      p = p + geom_point(aes_string(x='x_value', y='y_value', shape=shape),
                          colour='black', size=(pt.size+0.5), alpha=0.8)
 
       #     #Alternative script for making points with black outline
       #     #though there is internal bug with legend
-      #     p = p + geom_point(aes_string(x='x.value', y='y.value',
+      #     p = p + geom_point(aes_string(x='x_value', y='y_value',
       #                                   fill=colour, shape=shape),
       #                        colour='black', size=pt.size, alpha=0.8)
       #     p = p + scale_shape_manual(values=21:25)
     }
 
-    p = p + geom_point(aes_string(x='x.value', y='y.value',
+    p = p + geom_point(aes_string(x='x_value', y='y_value',
                                   colour=colour, shape=shape),
                        size=pt.size, alpha=0.8)
 
@@ -138,15 +138,15 @@ pca_score = function(pca_data, PCs=1:2,
 
   #Cusomizing colours of points
   #if colour is discrete give customized colours
-  if(!is.numeric(collected.data[,colour]) &
-          length(unique(collected.data[,colour])) >= 8 &
-          length(unique(collected.data[,colour])) < 12 ) {
+  if(!is.numeric(collected_data[,colour]) &
+          length(unique(collected_data[,colour])) >= 8 &
+          length(unique(collected_data[,colour])) < 12 ) {
     p = p + scale_colour_brewer(palette='Dark2')
 
   }
 
   #if colour is continuous give colour gradient
-  else if(is.numeric(collected.data[,colour])) {
+  else if(is.numeric(collected_data[,colour])) {
     p = p + scale_colour_gradient(low='red')
   }
 
@@ -154,7 +154,7 @@ pca_score = function(pca_data, PCs=1:2,
   #Adding text only if the "label" descriptor has been provided
   if (!is.null(label))
   {
-   p = p + ggrepel::geom_text_repel(aes_string(x='x.value', y='y.value', label=label),
+   p = p + ggrepel::geom_text_repel(aes_string(x='x_value', y='y_value', label=label),
                      hjust=-0.5, vjust=0.3,
                      size=2.5, fontface='plain', lineheight=0.8)
   }
@@ -203,5 +203,5 @@ pca_score = function(pca_data, PCs=1:2,
   p = p + facet_wrap(~ view.var, ncol=min(floor(length(PCs)/2), 3)) +
   theme(strip.text.x = element_text(size=12, face='bold'))
 
-  return(list('collected.data'=collected.data, 'p'=p, 'elp.data'=elp.data))
+  return(list('collected_data'=collected_data, 'p'=p))
 }
