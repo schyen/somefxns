@@ -12,6 +12,7 @@
 #'     (one of the metadata columns)
 #'     specifies the groupings around which ellipses should be drawn
 #'
+#' @export
 #' @return list of: \code{p} ggplot object with generated plot
 #'                  \code{collected_data} all the data used to plot pca data
 #'                      using ggplot2. can use collected_data for

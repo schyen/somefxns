@@ -13,6 +13,7 @@
 #'     default UV
 #' @param center logical; mean centering; default to TRUE
 #'
+#' @export
 #' @return prcomp object; PCA-processed data
 
 perform_pca <- function(data, sampleID='sample_name', variable, value='value',
