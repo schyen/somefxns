@@ -25,3 +25,8 @@ RoxygenNote: 6.1.0
 Suggests: knitr,
     rmarkdown
 VignetteBuilder: knitr
+Collate:
+  pca_biplot.R
+  pca_score.R
+  generate_heatmap.R
+  pca_loading.R
