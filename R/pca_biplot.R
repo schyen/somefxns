@@ -16,7 +16,9 @@
 #' @import ggfortify
 #' @import ggplot2
 #'
-#' @return \code{p_biplot} ggplot biplot
+#' @return
+#'    list of:
+#'         \code{p_biplot} ggplot biplot
 #'         \code{pcx} prcomp object.
 #'         \code{pcx_summary} dataframe. summary of pca
 
@@ -71,5 +73,4 @@ pca_biplot <- function(data, metadata, colour = NULL, label = TRUE,
   print(p_biplot)
 
   return(list('pcx' = pcx, 'pcx_summary' = pcx_summary, 'p_biplot' = p_biplot))
-
 }

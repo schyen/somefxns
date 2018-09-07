@@ -26,7 +26,8 @@ rownames must match rownames in data}
 \item{loadings.label.colour}{string. default 'darkred'}
 }
 \value{
-\code{p_biplot} ggplot biplot
+list of:
+        \code{p_biplot} ggplot biplot
         \code{pcx} prcomp object.
         \code{pcx_summary} dataframe. summary of pca
 }
