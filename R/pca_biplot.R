@@ -13,9 +13,6 @@
 #' @param loadings.label logic. default TRUE. When set, label loadings
 #' @param loadings.label.colour string. default 'darkred'
 #'
-#' @import ggfortify
-#' @import ggplot2
-#'
 #' @return
 #'    list of:
 #'         \code{p_biplot} ggplot biplot
