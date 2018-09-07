@@ -208,7 +208,7 @@ generate_heatmap <- function(data, x_var, y_var, value_var,
     ggplot2::scale_x_continuous(expand = c(0, 0), limits=xlim) +
     ggplot2::scale_y_continuous(expand = c(0, 0), limits=ylim) +
     theme_none() +
-    ggplot2::theme(plot.margin = unit(c(0,0.2,0,0.5), 'cm')) +#t,r,b,l
+    ggplot2::theme(plot.margin = ggplot2::unit(c(0,0.2,0,0.5), 'cm')) +#t,r,b,l
     ggplot2::labs(x=NULL, y=NULL)
 
   ## Y axis dendrogram 2----------------------------------------------------------
@@ -240,7 +240,7 @@ generate_heatmap <- function(data, x_var, y_var, value_var,
     ggplot2::scale_x_continuous(expand = c(0, 0), limits=xlim) +
     ggplot2::scale_y_continuous(expand = c(0, 0), limits=ylim) +
     theme_none() +
-    ggplot2::theme(plot.margin = unit(c(-0.1,0,0.6,0), 'cm')) +
+    ggplot2::theme(plot.margin = ggplot2::unit(c(-0.1,0,0.6,0), 'cm')) +
     ggplot2::labs(x=NULL, y=NULL)
 
   # plot caption
@@ -249,7 +249,7 @@ generate_heatmap <- function(data, x_var, y_var, value_var,
   y_dist <- y_dist
   y_hclust <- y_hclust
 
-  caption <- str_c(sprintf("X-Axis Dendrogram:\n     Distance method: %s\n     Linkage method: %s\n\n",x_dist, x_hclust),
+  caption <- stringr::str_c(sprintf("X-Axis Dendrogram:\n     Distance method: %s\n     Linkage method: %s\n\n",x_dist, x_hclust),
                    sprintf("Y-Axis Dendrogram:\n     Distance method: %s\n     Linkage method: %s", y_dist, y_hclust))
   # putting plots together--------------------------------------------------------
   # extracting legend
@@ -269,8 +269,8 @@ generate_heatmap <- function(data, x_var, y_var, value_var,
 
   mat <- matrix(list(g_x, g_h, g_cl, g_y), nrow=2)
   g <- gtable::gtable_matrix(name='heatmap',grobs=mat,
-                     widths=unit(c(heatmap_w,dendro_y_w),'cm'),
-                     heights=unit(c(dendro_x_h, heatmap_h), 'cm'))
+                     widths=ggplot2::unit(c(heatmap_w,dendro_y_w),'cm'),
+                     heights=ggplot2::unit(c(dendro_x_h, heatmap_h), 'cm'))
 
   # saving plot
   ggplot2::ggsave(out, g, width=(heatmap_w+dendro_y_w)*1.01,

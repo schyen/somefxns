@@ -13,6 +13,7 @@ Imports:
   ellipse,
   ggdendro,
   ggplot2,
+  ggfortify,
   ggrepel,
   grid,
   gridExtra,

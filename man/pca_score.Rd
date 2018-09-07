@@ -29,10 +29,10 @@ pca_score(pca_data, PCs = 1:2, colour = NULL, shape = NULL,
 specifies the groupings around which ellipses should be drawn}
 }
 \value{
-list of: 'p' ggplot object with generated plot
-                 'collected_data' all the data used to plot pca data
-                                  using ggplot2. can use collected_data for
-                                  further customization using ggplot
+list of: \code{p} ggplot object with generated plot
+                 \code{collected_data} all the data used to plot pca data
+                     using ggplot2. can use collected_data for
+                     further customization using ggplot
 }
 \description{
 Functions for plotting pca results in score plot

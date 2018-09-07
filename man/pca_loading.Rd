@@ -17,8 +17,8 @@ to label all compounds (or bins), set label = 'all'}
 \item{title}{string; title of loading plot}
 }
 \value{
-list of: 'p' ggplot object with generated plot
-                 'collected_data' all the data used to plot pca data
+list of: \code{p} ggplot object with generated plot
+                 \code{collected_data} all the data used to plot pca data
                                   using ggplot2. can use collected_data for
                                   further customization using ggplot
 }
