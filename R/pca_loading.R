@@ -84,9 +84,9 @@ pca_loading = function(pca_data, PCs=1:4, label=NULL, title=NULL)
     collected_data <- rbind(collected_data, view_data)
   }
 
-  #Calculating plot limits
-  xlimit = max(abs(collected_data$xPC))*1.1
-  ylimit = max(abs(collected_data$yPC))*1.1
+  # #Calculating plot limits
+  # xlimit = max(abs(collected_data$xPC))*1.1
+  # ylimit = max(abs(collected_data$yPC))*1.1
 
   collected_data <- unique(collected_data)
 
@@ -113,8 +113,8 @@ pca_loading = function(pca_data, PCs=1:4, label=NULL, title=NULL)
   p = p + xlab('PC loading') + ylab('PC loading')
 
   #Setting limits
-  p = p + xlim(-xlimit,xlimit)
-  p = p + ylim(-ylimit,ylimit)
+  # p = p + xlim(-xlimit,xlimit)
+  # p = p + ylim(-ylimit,ylimit)
 
   # facetting through PC pairs
   p = p + facet_wrap(~ View, ncol=min(floor(length(PCs)/2), 3)) +

@@ -102,9 +102,9 @@ pca_score = function(pca_data, PCs=1:2,
     }
   }
 
-  #Calculating plot limits
-  xlimit = max(abs(collected_data$x.value))*1.15
-  ylimit = max(abs(collected_data$y.value))*1.1
+  # #Calculating plot limits
+  # xlimit = max(abs(collected_data$x.value))*1.15
+  # ylimit = max(abs(collected_data$y.value))*1.15
 
   #Generating plot-------------------------------------------------------------------
 
@@ -195,8 +195,8 @@ pca_score = function(pca_data, PCs=1:2,
 
 
   #Setting limits
-  p = p + xlim(-xlimit,xlimit)
-  p = p + ylim(-ylimit,ylimit)
+  # p = p + xlim(-xlimit,xlimit)
+  # p = p + ylim(-ylimit,ylimit)
 
   # facet by pairs of PC
   p = p + facet_wrap(~ view_var, ncol=min(floor(length(PCs)/2), 3)) +

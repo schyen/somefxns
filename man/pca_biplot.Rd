@@ -4,14 +4,16 @@
 \alias{pca_biplot}
 \title{pca_biplot}
 \usage{
-pca_biplot(data, metadata, colour, label = TRUE, loadings = TRUE,
-  loadings.label = TRUE, loadings.label.colour = "darkred")
+pca_biplot(data, metadata, colour = NULL, label = TRUE,
+  loadings = TRUE, loadings.label = TRUE,
+  loadings.label.colour = "darkred")
 }
 \arguments{
 \item{data}{dataframe. Independant variable in rows,
 dependant variable in columns. Variable names in row and column names}
 
-\item{metadata}{dataframe. metadata for the independant variables}
+\item{metadata}{dataframe. metadata for the independant variables
+rownames must match rownames in data}
 
 \item{colour}{string. column name in metadata to colour code score}
 
