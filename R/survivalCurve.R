@@ -36,7 +36,6 @@ survivalCurve <- function(pdata, well_include=NULL, timepoint=99,
   pdata[,x] <- as.numeric(pdata[,x])
   pdata <- pdata %>%
     arrange(!! sym(x))
-  print(pdata)
 
   p <- ggplot(pdata, aes_string(x=x, y=y)) +
     geom_vline(xintercept=0, colour='grey60') +
