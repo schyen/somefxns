@@ -9,6 +9,6 @@ library(devtools)
 # download and install isolationWorkflow
 install_github("schyen/somefxns")
 
-# load isolationWorkflow package
+# load somefxns package
 library('somefxns')
 ```
