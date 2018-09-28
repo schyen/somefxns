@@ -6,14 +6,15 @@
 #' @param ctrl_by \code{c('row', 'col')} Default 'row'
 #'     \code{'row'} means growth control wells are in the same row as corresponding wells
 #'     \code{'col'} means growth control wells are in the same column as corresponding wells
-#'
+#' @param ctrl_label string. Default \code{'growthctrl'}.
+#'     How are growth control wells identified in metadata
 #' @import dplyr
 #' @import rlang
 
 #' @return dataframe. full, with percent survival in survival column.
 #' @export
 
-calcSurvival <- function (full, ctrl_by = 'row') {
+calcSurvival <- function (full, ctrl_by = 'row', ctrl_label = 'growthctrl') {
 
   if(!ctrl_by %in% c('row','col')) {
     stop("ctrl_by must be either 'row' or 'col'")
@@ -24,7 +25,7 @@ calcSurvival <- function (full, ctrl_by = 'row') {
 
   # calculating percent survival
   calcSurvival <- function(d) {
-    growthctrl <- abs(d$adj[d$welltype == 'growthctrl'])
+    growthctrl <- abs(d$adj[d$welltype == ctrl_label])
 
     # only calculate survival if growth control well exists in current df
     if (!all(is.na(growthctrl))) {
