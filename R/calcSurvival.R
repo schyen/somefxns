@@ -15,8 +15,8 @@
 
 calcSurvival <- function (full, ctrl_by = 'row') {
 
-  if(!blank_by %in% c('row','col')) {
-    stop("blank_by must be either 'row' or 'col'")
+  if(!ctrl_by %in% c('row','col')) {
+    stop("ctrl_by must be either 'row' or 'col'")
   }
 
   if (ctrl_by == 'row') ctrl_by <- 'platerow'
