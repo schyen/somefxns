@@ -7,15 +7,9 @@
 importVictor(file)
 }
 \arguments{
-\item{file}{path and file name}
-}
-\value{
-list of:
-    df - dataframe of wells, absorbance. is the first sheet of the victor file
-    plate - 2nd sheet of victor file
-    protocol - 3rd sheet of victor file
-    errors - 4th sheet of victor file
-    notes - 5th sheet of victor file
+\item{file}{path and file name
+
+\code{df} - dataframe of wells, absorbance. is the first sheet of the victor file;}
 }
 \description{
 import raw data from victor
