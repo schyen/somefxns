@@ -18,8 +18,7 @@
 #'
 #' @return ggplot. growth curve of the negatice and postive control
 
-checkCtrl <- function(plateDF=NULL, metadata=NULL, full=NULL,
-                      well_include=NULL, blank_by = 'row',
+checkCtrl <- function(plateDF, metadata, well_include=NULL, blank_by = 'row',
                       x='minute', y='abs', colour='abxlevel',
                       group='abxlevel') {
 

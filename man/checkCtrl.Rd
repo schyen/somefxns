@@ -4,9 +4,8 @@
 \alias{checkCtrl}
 \title{checkCtrl}
 \usage{
-checkCtrl(plateDF = NULL, metadata = NULL, full = NULL,
-  well_include = NULL, blank_by = "row", x = "minute", y = "abs",
-  colour = "abxlevel", group = "abxlevel")
+checkCtrl(plateDF, metadata, well_include = NULL, blank_by = "row",
+  x = "minute", y = "abs", colour = "abxlevel", group = "abxlevel")
 }
 \arguments{
 \item{plateDF}{dataframe. first sheet of victor}
