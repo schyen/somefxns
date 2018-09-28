@@ -17,7 +17,7 @@ Well, platerow, platecol, strain, curveID, media, abx, abxlevel}
 \item{well_include}{string or vector of string. Default NULL. Which wells to
 include in analysis}
 
-\item{blank_by}{\code{c('row','col)}. Default \code{'row'}.
+\item{blank_by}{\code{c('row','col')}. Default \code{'row'}.
 Sets orientation of blanks.
 \code{'row'} means blanks are in the same row as corresponding wells
 \code{'col'} means blanks are in the same column as corresponding wells}
