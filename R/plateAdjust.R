@@ -4,7 +4,7 @@
 #'
 #' @param plateDF dataframe. first spreadsheet of victor file
 #' @param metadata dataframe. well metadata. must have columns:
-#'     Well, platerow, platecol, strain, curveID, media, abx, abxlevel
+#'     Well, platerow, platecol, strain, curveID, welltype, media, abx, abxlevel
 #' @param well_include string or vector of string. Default NULL. Which wells to
 #'     include in analysis
 #' @param blank_by \code{c('row','col')}. Default \code{'row'}.
@@ -45,7 +45,7 @@ plateAdjust <- function(plateDF, metadata, well_include=NULL, blank_by = 'row',
   full <- rename(full, plateno = Plate)
 
   absAdjust <- function(d) {
-    blankval <- d$abs[d$strain == blank_label]
+    blankval <- d$abs[d$welltype == blank_label]
     d$adj <- d$abs - blankval
     return(d)
   }

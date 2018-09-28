@@ -23,7 +23,7 @@ calcSurvival <- function (full, ctrl_by = 'row') {
 
   # calculating percent survival
   calcSurvival <- function(d) {
-    growthctrl <- abs(d$adj[d$strain == 'growthctrl'])
+    growthctrl <- abs(d$adj[d$welltype == 'growthctrl'])
 
     # only calculate survival if growth control well exists in current df
     if (!all(is.na(growthctrl))) {
