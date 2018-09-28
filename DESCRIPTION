@@ -19,7 +19,9 @@ Imports:
   gridExtra,
   gtable,
   plyr,
+  readxl,
   reshape2,
+  rlang,
   stringr
 RoxygenNote: 6.1.0
 Suggests: knitr,
