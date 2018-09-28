@@ -17,7 +17,8 @@
 #' @import dplyr
 #' @return
 #'     full dataframe of with metadata, absorbance, adjusted absorbance in one dataframe
-#'
+#' @export
+
 plateAdjust <- function(plateDF, metadata, well_include=NULL, blank_by = 'row',
                         blank_label = 'blank') {
 

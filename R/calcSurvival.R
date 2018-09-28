@@ -11,6 +11,7 @@
 #' @import rlang
 
 #' @return dataframe. full, with percent survival in survival column.
+#' @export
 
 calcSurvival <- function (full, ctrl_by = 'row') {
 

@@ -14,6 +14,7 @@
 #'
 #' @import ggplot2
 #' @return growth curve. ggplot.
+#' @export
 
 growthCurve <- function(pdata, well_include=NULL, x='minute', y='adj',
                         colour='abxlevel', group='abxlevel', preview=TRUE) {

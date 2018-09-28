@@ -21,7 +21,7 @@
 #'                  \code{collected_data} all the data used to plot pca data
 #'                      using ggplot2. can use collected_data for
 #'                      further customization using ggplot
-
+#' @export
 #------------------------------------------------------------------------->
 
 pca_score = function(pca_data, PCs=1:2,

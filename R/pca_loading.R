@@ -10,6 +10,7 @@
 #'                                   using ggplot2. can use collected_data for
 #'                                   further customization using ggplot
 #' @import ggplot2
+#' @export
 
 pca_loading = function(pca_data, PCs=1:4, label=NULL, title=NULL)
 {

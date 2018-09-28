@@ -10,6 +10,7 @@
 #' @param solvent_vol numeric. volume of solvent used to maek fecal slurry -- mL
 #'
 #' @return concentration fo antibiltic in sample. in ug abx / g poop
+#' @export
 
 calcabx <- function(std_max, std_MIC_dil, fw_MIC_dil, sample_wt, solvent_vol) {
 

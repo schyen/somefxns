@@ -6,6 +6,7 @@
 #'
 #' \code{df} - dataframe of wells, absorbance. is the first sheet of the victor file;
 #' @import readxl
+#' @export
 
 importVictor <- function(file){
 

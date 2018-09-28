@@ -17,7 +17,7 @@
 #' @import ggplot2
 #' @import dplyr
 #' @return growth curve. ggplot.
-
+#' @export
 
 survivalCurve <- function(pdata, well_include=NULL, timepoint=99,
                           x='abxlevel', y='survival', preview=TRUE) {

@@ -17,6 +17,7 @@
 #'
 #' @import reshape2
 #' @return prcomp object; PCA-processed data
+#' @export
 
 perform_pca <- function(data, sampleID='sample_name', variable, value='value',
                        scale='UV', center = TRUE, convert.NA=FALSE,

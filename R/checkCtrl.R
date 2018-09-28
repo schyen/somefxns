@@ -14,6 +14,7 @@
 #'
 #' @import ggplot2
 #' @return ggplot. growth curve of the negative and postive control
+#' @export
 
 checkCtrl <- function(plateDF, metadata, well_include=NULL,
                       x='minute', y='abs', colour='abxlevel',

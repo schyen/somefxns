@@ -7,6 +7,7 @@
 #' @param multiple numeric; factor by which sequence is generated
 #'
 #' @return vector of numbers increasing by a multiple
+#' @export
 
 genbymultiple <- function(x, n, multiple) {
   out <- c()
