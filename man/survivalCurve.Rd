@@ -9,7 +9,7 @@ survivalCurve(pdata, well_include = NULL, timepoint = 99,
 }
 \arguments{
 \item{pdata}{dataframe. MIC data with metadata, adjusted absorbance,
-and percent survivel}
+and percent survival}
 
 \item{well_include}{string or vector of string. Default NULL. Which wells to
 include in analysis}

@@ -17,5 +17,5 @@ genbymultiple(x, n, multiple)
 vector of numbers increasing by a multiple
 }
 \description{
-genterate sequence by multiples
+generate sequence by multiples
 }

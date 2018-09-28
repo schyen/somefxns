@@ -1,6 +1,6 @@
 #' genbymultiple
 #'
-#' genterate sequence by multiples
+#' generate sequence by multiples
 #'
 #' @param x numeric; starting value
 #' @param n numeric; number of values to be in sequence

@@ -9,20 +9,20 @@ growthCurve(pdata, well_include = NULL, x = "minute", y = "adj",
 }
 \arguments{
 \item{pdata}{dataframe. MIC data with metadata, adjusted absorbance,
-and percent survivel}
+and percent survival}
 
 \item{well_include}{string or vector of string. Default NULL. Which wells to
 include in analysis}
 
 \item{x}{string. Default \code{'minute'}. x axis of growth curve.}
 
-\item{y}{string. Defulat \code{'adj'}. y axis of growth curve.}
+\item{y}{string. Default \code{'adj'}. y axis of growth curve.}
 
 \item{colour}{string. Default \code{'abxlevel'}. characteristic to colour code by.}
 
 \item{group}{string. Default \code{'abxlevel'}. characteristic to group curves by}
 
-\item{preview}{logic. Defulat \code{TRUE}. Preview plot}
+\item{preview}{logic. Default \code{TRUE}. Preview plot}
 }
 \value{
 growth curve. ggplot.

@@ -17,7 +17,7 @@
 #' @param group string. characteristic to colour by on plot. Default 'abxlevel'
 #'
 #' @import ggplot2
-#' @return ggplot. growth curve of the negatice and postive control
+#' @return ggplot. growth curve of the negative and postive control
 
 checkCtrl <- function(plateDF, metadata, well_include=NULL, blank_by = 'row',
                       x='minute', y='abs', colour='abxlevel',

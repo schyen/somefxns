@@ -3,14 +3,14 @@
 #' plotting growth curve of MIC plate assay
 #'
 #' @param pdata dataframe. MIC data with metadata, adjusted absorbance,
-#'     and percent survivel
+#'     and percent survival
 #' @param well_include string or vector of string. Default NULL. Which wells to
 #'     include in analysis
 #' @param x string. Default \code{'minute'}. x axis of growth curve.
-#' @param y string. Defulat \code{'adj'}. y axis of growth curve.
+#' @param y string. Default \code{'adj'}. y axis of growth curve.
 #' @param colour string. Default \code{'abxlevel'}. characteristic to colour code by.
 #' @param group string. Default \code{'abxlevel'}. characteristic to group curves by
-#' @param preview logic. Defulat \code{TRUE}. Preview plot
+#' @param preview logic. Default \code{TRUE}. Preview plot
 #'
 #' @import ggplot2
 #' @return growth curve. ggplot.

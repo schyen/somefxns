@@ -30,7 +30,7 @@ Sets orientation of blanks.
 \item{group}{string. characteristic to colour by on plot. Default 'abxlevel'}
 }
 \value{
-ggplot. growth curve of the negatice and postive control
+ggplot. growth curve of the negative and postive control
 }
 \description{
 check negative and positive control of MIC assay

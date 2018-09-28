@@ -3,7 +3,7 @@
 #' plotting survival curve of MIC plate assay
 #'
 #' @param pdata dataframe. MIC data with metadata, adjusted absorbance,
-#'     and percent survivel
+#'     and percent survival
 #' @param well_include string or vector of string. Default NULL. Which wells to
 #'     include in analysis
 #' @param x string. Default \code{'minute'}. x axis of growth curve.
