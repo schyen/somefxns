@@ -4,7 +4,7 @@
 \alias{calcSurvival}
 \title{calcSurvival}
 \usage{
-calcSurvival(full, ctrl_by = "row")
+calcSurvival(full, ctrl_by = "row", ctrl_label = "growthctrl")
 }
 \arguments{
 \item{full}{dataframe. metadata, absorbance, adjusted absorbance}
@@ -12,6 +12,9 @@ calcSurvival(full, ctrl_by = "row")
 \item{ctrl_by}{\code{c('row', 'col')} Default 'row'
 \code{'row'} means growth control wells are in the same row as corresponding wells
 \code{'col'} means growth control wells are in the same column as corresponding wells}
+
+\item{ctrl_label}{string. Default \code{'growthctrl'}.
+How are growth control wells identified in metadata}
 }
 \value{
 dataframe. full, with percent survival in survival column.
