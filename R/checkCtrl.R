@@ -7,10 +7,6 @@
 #'     Well, platerow, platecol, strain, curveID, media, abx, abxlevel
 #' @param well_include string or vector of string. Default NULL. Which wells to
 #'     include in analysis
-#' @param blank_by \code{c('row','col')}. Default \code{'row'}.
-#'     Sets orientation of blanks.
-#'     \code{'row'} means blanks are in the same row as corresponding wells
-#'     \code{'col'} means blanks are in the same column as corresponding wells
 #' @param x string. x-axis of plot. default \code{'minute'}
 #' @param y string. y-axis of plot. default \code{'abs'}
 #' @param colour string. characteristic to colour by on plot. Default 'abxlevel'
@@ -19,16 +15,9 @@
 #' @import ggplot2
 #' @return ggplot. growth curve of the negative and postive control
 
-checkCtrl <- function(plateDF, metadata, well_include=NULL, blank_by = 'row',
+checkCtrl <- function(plateDF, metadata, well_include=NULL,
                       x='minute', y='abs', colour='abxlevel',
                       group='abxlevel') {
-
-  if(!blank_by %in% c('row','col')) {
-    stop("blank_by must be either 'row' or 'col'")
-  }
-
-  if (blank_by == 'row') blank_by <- 'platerow'
-  else blank_by <- 'platecol'
 
   newcolname = colnames(plateDF)
   newcolname[length(newcolname)] <- 'abs'
