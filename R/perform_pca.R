@@ -12,8 +12,10 @@
 #' @param scale 'UV' for unit variance, 'UVN' for no unit variance, 'pareto';
 #'     default UV
 #' @param center logical; mean centering; default to TRUE
+#' @param sampleID string. column name for sampleID. Default \code{'sample_name'}
+#' @param print logic. Default \code{TRUE}. print preview of pca results
 #'
-#' @export
+#' @import reshape2
 #' @return prcomp object; PCA-processed data
 
 perform_pca <- function(data, sampleID='sample_name', variable, value='value',

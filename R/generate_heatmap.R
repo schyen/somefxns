@@ -58,7 +58,7 @@
 #'     \code{p_x} ggplot of x-axis dendrogram
 #'     \code{p_y} ggplot of y-axis dendrogram
 #'     \code{g} gtable grob of entire heatmap and dendrograms
-#' @export
+#' @import ggplot2
 
 generate_heatmap <- function(data, x_var, y_var, value_var,
                          x_dist = 'euclidean', x_hclust = 'complete',
@@ -67,7 +67,7 @@ generate_heatmap <- function(data, x_var, y_var, value_var,
                          x_label = NULL, y_label = NULL,
                          heatmap_w = 20, heatmap_h = 20,
                          dendro_x_h = 8, dendro_y_w = 8,
-                         out) {
+                         output) {
 
   # formatting data into wide format so can calculate dendrograms
   ## heatmap x-axis data

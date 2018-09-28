@@ -8,7 +8,7 @@ generate_heatmap(data, x_var, y_var, value_var, x_dist = "euclidean",
   x_hclust = "complete", y_dist = "euclidean", y_hclust = "complete",
   x_meta = NULL, y_meta = NULL, x_label = NULL, y_label = NULL,
   heatmap_w = 20, heatmap_h = 20, dendro_x_h = 8, dendro_y_w = 8,
-  out)
+  output)
 }
 \arguments{
 \item{data}{dataframe. long format, with column of xdata, variable

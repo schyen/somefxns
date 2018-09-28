@@ -12,6 +12,7 @@
 #' @param group string. Default \code{'abxlevel'}. characteristic to group curves by
 #' @param preview logic. Defulat \code{TRUE}. Preview plot
 #'
+#' @import ggplot2
 #' @return growth curve. ggplot.
 
 growthCurve <- function(pdata, well_include=NULL, x='minute', y='adj',
@@ -22,7 +23,7 @@ growthCurve <- function(pdata, well_include=NULL, x='minute', y='adj',
 
   # setting order of abx treatment
   factor_order <- sort(unique(pdata[ ,group]))
-  pdata[ ,group] <- factor(pdata[ ,group], level=factor_order)
+  pdata[ ,group] <- factor(pdata[ ,group], levels=factor_order)
   p <- ggplot(pdata, aes_string(x=x, y=y, colour=colour)) +
     # geom_point() +
     geom_vline(xintercept=0, colour='grey60') +

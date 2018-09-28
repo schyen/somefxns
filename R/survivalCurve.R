@@ -14,6 +14,8 @@
 #'     produces survival curve for each timepoint.
 #' @param preview logic. Defulat \code{TRUE}. Preview plot
 #'
+#' @import ggplot2
+#' @import dplyr
 #' @return growth curve. ggplot.
 
 

@@ -2,10 +2,11 @@ Package: somefxns
 Type: Package
 Title: Generic Tools to Help with Analysis
 Version: 0.1.2
-Author: person("Sandi", "Yen", role = c("aut", "cre"))
+Authors@R: person("Sandi", "Yen", email = 'syen@uoguelph.ca', role = c("aut", "cre"))
 Description: Some generic functions to help with analysis. 
-       Varied in application and purposes
-License: MIT
+       Varied in application and purposes. Also includes functions for 
+       analyzing MIC plate assay
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports:
@@ -25,5 +26,6 @@ Imports:
   stringr
 RoxygenNote: 6.1.0
 Suggests: knitr,
-    rmarkdown
+    rmarkdown,
+    testthat
 VignetteBuilder: knitr

@@ -14,6 +14,7 @@
 #' @param blank_label string. Default \code{'blank'}.
 #'     How are blanks identified in metadata
 #'
+#' @import dplyr
 #' @return
 #'     full dataframe of with metadata, absorbance, adjusted absorbance in one dataframe
 #'

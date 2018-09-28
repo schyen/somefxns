@@ -16,6 +16,7 @@
 #' @param colour string. characteristic to colour by on plot. Default 'abxlevel'
 #' @param group string. characteristic to colour by on plot. Default 'abxlevel'
 #'
+#' @import ggplot2
 #' @return ggplot. growth curve of the negatice and postive control
 
 checkCtrl <- function(plateDF, metadata, well_include=NULL, blank_by = 'row',
@@ -47,7 +48,7 @@ checkCtrl <- function(plateDF, metadata, well_include=NULL, blank_by = 'row',
 
   # setting order of abx treatment
   factor_order <- rev(sort(unique(full[ ,group])))
-  full[ ,group] <- factor(full[ ,group], level=factor_order)
+  full[ ,group] <- factor(full[ ,group], levels=factor_order)
 
   p <- ggplot(full, aes_string(x=x, y=y, colour=colour)) +
     geom_point() +

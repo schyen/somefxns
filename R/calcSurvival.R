@@ -7,6 +7,9 @@
 #'     \code{'row'} means growth control wells are in the same row as corresponding wells
 #'     \code{'col'} means growth control wells are in the same column as corresponding wells
 #'
+#' @import dplyr
+#' @import rlang
+
 #' @return dataframe. full, with percent survival in survival column.
 
 calcSurvival <- function (full, ctrl_by = 'row') {

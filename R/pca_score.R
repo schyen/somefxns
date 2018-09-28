@@ -7,12 +7,16 @@
 #' @param size string; name of column to be used as the size aesthetic
 #' @param label string; name of column to be used as the point labels
 #' @param pt.size numeric; default 3; size of points
-#' @param CIgroup' draws an ellipse based on covariance matrix at the
+#' @param title string; title of pca plot
+#' @param legend.ori string. \code{c('vertical','horizontal')}.
+#'     Default \code{'vertical'}
+#' @param outline logic. Default \code{TRUE}. outline points
+#' @param CIgroup draws an ellipse based on covariance matrix at the
 #'     95% confidence level around the specified group
 #'     (one of the metadata columns)
 #'     specifies the groupings around which ellipses should be drawn
 #'
-#' @export
+#' @import ggplot2
 #' @return list of: \code{p} ggplot object with generated plot
 #'                  \code{collected_data} all the data used to plot pca data
 #'                      using ggplot2. can use collected_data for

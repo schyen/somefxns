@@ -11,6 +11,8 @@ perform_pca(data, sampleID = "sample_name", variable, value = "value",
 \item{data}{dataframe; data to be used for PCA. Sample metadata is in columns
 and the variables involved (i.e. compound or species)}
 
+\item{sampleID}{string. column name for sampleID. Default \code{'sample_name'}}
+
 \item{variable}{string; the column name in which variables are stored}
 
 \item{value}{string; default 'value'; the column name in which data values
@@ -24,6 +26,8 @@ default UV}
 \item{convert.NA}{logical; where value is NA, convert value to 0;
 desirable when want to explicitly say missing values are true zeros
 (i.e. below limit of detection) and not missing from analysis}
+
+\item{print}{logic. Default \code{TRUE}. print preview of pca results}
 }
 \value{
 prcomp object; PCA-processed data

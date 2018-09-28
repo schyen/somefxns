@@ -21,9 +21,16 @@ pca_score(pca_data, PCs = 1:2, colour = NULL, shape = NULL,
 
 \item{label}{string; name of column to be used as the point labels}
 
+\item{title}{string; title of pca plot}
+
+\item{legend.ori}{string. \code{c('vertical','horizontal')}.
+Default \code{'vertical'}}
+
 \item{pt.size}{numeric; default 3; size of points}
 
-\item{CIgroup'}{draws an ellipse based on covariance matrix at the
+\item{outline}{logic. Default \code{TRUE}. outline points}
+
+\item{CIgroup}{draws an ellipse based on covariance matrix at the
 95% confidence level around the specified group
 (one of the metadata columns)
 specifies the groupings around which ellipses should be drawn}
