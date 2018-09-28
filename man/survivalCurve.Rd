@@ -5,7 +5,7 @@
 \title{survivalCurve}
 \usage{
 survivalCurve(pdata, well_include = NULL, timepoint = 99,
-  x = "abxlevel", y = "survival", preview = TRUE)
+  x = "wellconc", y = "survival", preview = TRUE)
 }
 \arguments{
 \item{pdata}{dataframe. MIC data with metadata, adjusted absorbance,

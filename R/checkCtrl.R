@@ -4,21 +4,21 @@
 #'
 #' @param plateDF dataframe. first sheet of victor
 #' @param metadata dataframe. well metadata must have columns:
-#'     Well, platerow, platecol, strain, curveID, media, abx, abxlevel
+#'     Well, platerow, platecol, strain, curveID, media, abx, wellconc
 #' @param well_include string or vector of string. Default NULL. Which wells to
 #'     include in analysis
 #' @param x string. x-axis of plot. default \code{'minute'}
 #' @param y string. y-axis of plot. default \code{'abs'}
-#' @param colour string. characteristic to colour by on plot. Default 'abxlevel'
-#' @param group string. characteristic to colour by on plot. Default 'abxlevel'
+#' @param colour string. characteristic to colour by on plot. Default 'wellconc'
+#' @param group string. characteristic to colour by on plot. Default 'wellconc'
 #'
 #' @import ggplot2
 #' @return ggplot. growth curve of the negative and postive control
 #' @export
 
 checkCtrl <- function(plateDF, metadata, well_include=NULL,
-                      x='minute', y='abs', colour='abxlevel',
-                      group='abxlevel') {
+                      x='minute', y='abs', colour='wellconc',
+                      group='wellconc') {
 
   newcolname = colnames(plateDF)
   newcolname[length(newcolname)] <- 'abs'

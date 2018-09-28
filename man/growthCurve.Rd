@@ -5,7 +5,7 @@
 \title{growthCurve}
 \usage{
 growthCurve(pdata, well_include = NULL, x = "minute", y = "adj",
-  colour = "abxlevel", group = "abxlevel", preview = TRUE)
+  colour = "wellconc", group = "wellconc", preview = TRUE)
 }
 \arguments{
 \item{pdata}{dataframe. MIC data with metadata, adjusted absorbance,
@@ -18,9 +18,9 @@ include in analysis}
 
 \item{y}{string. Default \code{'adj'}. y axis of growth curve.}
 
-\item{colour}{string. Default \code{'abxlevel'}. characteristic to colour code by.}
+\item{colour}{string. Default \code{'wellconc'}. characteristic to colour code by.}
 
-\item{group}{string. Default \code{'abxlevel'}. characteristic to group curves by}
+\item{group}{string. Default \code{'wellconc'}. characteristic to group curves by}
 
 \item{preview}{logic. Default \code{TRUE}. Preview plot}
 }

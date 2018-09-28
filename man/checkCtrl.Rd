@@ -5,13 +5,13 @@
 \title{checkCtrl}
 \usage{
 checkCtrl(plateDF, metadata, well_include = NULL, x = "minute",
-  y = "abs", colour = "abxlevel", group = "abxlevel")
+  y = "abs", colour = "wellconc", group = "wellconc")
 }
 \arguments{
 \item{plateDF}{dataframe. first sheet of victor}
 
 \item{metadata}{dataframe. well metadata must have columns:
-Well, platerow, platecol, strain, curveID, media, abx, abxlevel}
+Well, platerow, platecol, strain, curveID, media, abx, wellconc}
 
 \item{well_include}{string or vector of string. Default NULL. Which wells to
 include in analysis}
@@ -20,9 +20,9 @@ include in analysis}
 
 \item{y}{string. y-axis of plot. default \code{'abs'}}
 
-\item{colour}{string. characteristic to colour by on plot. Default 'abxlevel'}
+\item{colour}{string. characteristic to colour by on plot. Default 'wellconc'}
 
-\item{group}{string. characteristic to colour by on plot. Default 'abxlevel'}
+\item{group}{string. characteristic to colour by on plot. Default 'wellconc'}
 }
 \value{
 ggplot. growth curve of the negative and postive control

@@ -8,8 +8,8 @@
 #'     include in analysis
 #' @param x string. Default \code{'minute'}. x axis of growth curve.
 #' @param y string. Default \code{'adj'}. y axis of growth curve.
-#' @param colour string. Default \code{'abxlevel'}. characteristic to colour code by.
-#' @param group string. Default \code{'abxlevel'}. characteristic to group curves by
+#' @param colour string. Default \code{'wellconc'}. characteristic to colour code by.
+#' @param group string. Default \code{'wellconc'}. characteristic to group curves by
 #' @param preview logic. Default \code{TRUE}. Preview plot
 #'
 #' @import ggplot2
@@ -17,7 +17,7 @@
 #' @export
 
 growthCurve <- function(pdata, well_include=NULL, x='minute', y='adj',
-                        colour='abxlevel', group='abxlevel', preview=TRUE) {
+                        colour='wellconc', group='wellconc', preview=TRUE) {
 
   # remove wells
   pdata <- pdata[pdata$Well %in% well_include,]

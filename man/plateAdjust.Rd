@@ -11,7 +11,7 @@ plateAdjust(plateDF, metadata, well_include = NULL, blank_by = "row",
 \item{plateDF}{dataframe. first spreadsheet of victor file}
 
 \item{metadata}{dataframe. well metadata. must have columns:
-Well, platerow, platecol, strain, curveID, welltype, media, abx, abxlevel}
+Well, platerow, platecol, strain, curveID, welltype, media, abx, wellconc}
 
 \item{well_include}{string or vector of string. Default NULL. Which wells to
 include in analysis}

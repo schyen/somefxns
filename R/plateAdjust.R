@@ -4,7 +4,7 @@
 #'
 #' @param plateDF dataframe. first spreadsheet of victor file
 #' @param metadata dataframe. well metadata. must have columns:
-#'     Well, platerow, platecol, strain, curveID, welltype, media, abx, abxlevel
+#'     Well, platerow, platecol, strain, curveID, welltype, media, abx, wellconc
 #' @param well_include string or vector of string. Default NULL. Which wells to
 #'     include in analysis
 #' @param blank_by \code{c('row','col')}. Default \code{'row'}.

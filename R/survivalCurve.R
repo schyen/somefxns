@@ -20,7 +20,7 @@
 #' @export
 
 survivalCurve <- function(pdata, well_include=NULL, timepoint=99,
-                          x='abxlevel', y='survival', preview=TRUE) {
+                          x='wellconc', y='survival', preview=TRUE) {
 
   scaleFUN <- function(x) signif(x, 4)
 
