@@ -19,11 +19,13 @@ Imports:
   grid,
   gridExtra,
   gtable,
+  hash,
   plyr,
   readxl,
   reshape2,
   rlang,
-  stringr
+  stringr,
+  xml2
 RoxygenNote: 6.1.0
 Suggests: knitr,
     rmarkdown,

@@ -14,7 +14,6 @@
 
 pca_loading = function(pca_data, PCs=1:4, label=NULL, title=NULL)
 {
-  #------------------------------------------------------->
   #Input testing
 
   #Testing if the pca_data is indeed the result of
@@ -45,7 +44,6 @@ pca_loading = function(pca_data, PCs=1:4, label=NULL, title=NULL)
     }
 
   }
-  #------------------------------------------------------->
 
   #Extract loadings
   loading_data <- as.data.frame(pca_data$rotation)
