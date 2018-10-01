@@ -41,10 +41,9 @@ abif_fasta <- function(folder=NULL, exclude=NULL, trim=TRUE, trim.check=FALSE,
 
   #getting abif files
   fname <- list.files(path)
-  print(fname)
   pattern <- 'ab1'
   abif_files <- stringr::str_subset(fname, pattern)
-  print(abif_files)
+
   #excluding specified files
   if(!is.null(exclude)) {
 
