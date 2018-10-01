@@ -42,7 +42,7 @@ parse_blast <- function(filename=NULL, ngroups=1, tophit=FALSE,
     # removing those entries
     blast_node <- blast_node[!blast_node %in% blast_delete]
 
-    blast_delete_name <- xml2::xml_text(xml_find_all(blast_delete, 'Iteration_query-def'))
+    blast_delete_name <- xml2::xml_text(xml2:xml_find_all(blast_delete, 'Iteration_query-def'))
     message("The following samples returned no hits, and will be subsequently deleted:")
     message(sprintf('%s\n', blast_delete_name))
   }
@@ -52,9 +52,9 @@ parse_blast <- function(filename=NULL, ngroups=1, tophit=FALSE,
   for(i in 1:length(blast_node)){
 
     # sample
-    query_sample <- xml2::xml_text(xml_find_all(blast_node[[i]], 'Iteration_query-def'))
-    query_num <- xml2::xml_text(xml_find_all(blast_node[[i]], 'Iteration_iter-num'))
-    query_len <- xml2::xml_text(xml_find_all(blast_node[[i]], 'Iteration_query-len'))
+    query_sample <- xml2::xml_text(xml2:xml_find_all(blast_node[[i]], 'Iteration_query-def'))
+    query_num <- xml2::xml_text(xml2:xml_find_all(blast_node[[i]], 'Iteration_iter-num'))
+    query_len <- xml2::xml_text(xml2:xml_find_all(blast_node[[i]], 'Iteration_query-len'))
 
     #print a message to mark progress
     msg <- sprintf('Reading hit results for file "%s"', query_sample)
