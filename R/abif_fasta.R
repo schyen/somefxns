@@ -236,7 +236,7 @@ abif_fasta <- function(folder=NULL, exclude=NULL, trim=TRUE, trim.check=FALSE,
 
   #export as one FASTA file
   if(output != FALSE) {
-    write.fasta(sequences=dseq, names=abif_files, as.string=TRUE, nbchar = 1000,
+    seqinr::write.fasta(sequences=dseq, names=abif_files, as.string=TRUE, nbchar = 1000,
                 file.out=fname_out)
   }
 }
