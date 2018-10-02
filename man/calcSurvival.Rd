@@ -7,7 +7,8 @@
 calcSurvival(full, ctrl_by = "row", ctrl_label = "growthctrl")
 }
 \arguments{
-\item{full}{dataframe. metadata, absorbance, adjusted absorbance}
+\item{full}{dataframe. A datafram with all your metadata, absorbance,
+adjusted absorbance information}
 
 \item{ctrl_by}{\code{c('row', 'col')} Default 'row'
 \code{'row'} means growth control wells are in the same row as corresponding wells

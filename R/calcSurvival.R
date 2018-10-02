@@ -2,7 +2,8 @@
 #'
 #' Calculate percent survival using growth control well as 100%
 #'
-#' @param full dataframe. metadata, absorbance, adjusted absorbance
+#' @param full dataframe. A datafram with all your metadata, absorbance,
+#'     adjusted absorbance information
 #' @param ctrl_by \code{c('row', 'col')} Default 'row'
 #'     \code{'row'} means growth control wells are in the same row as corresponding wells
 #'     \code{'col'} means growth control wells are in the same column as corresponding wells
