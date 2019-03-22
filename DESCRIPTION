@@ -26,7 +26,7 @@ Imports:
   rlang,
   stringr,
   xml2
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
 Suggests: knitr,
     rmarkdown,
     testthat
