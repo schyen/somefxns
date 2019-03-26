@@ -4,8 +4,9 @@
 \alias{survivalCurve}
 \title{survivalCurve}
 \usage{
-survivalCurve(pdata, well_include = NULL, timepoint = 99,
-  x = "wellconc", y = "survival", preview = TRUE)
+survivalCurve(pdata, well_include = NULL,
+  timepoint = max(pdata$Repeat), x = "wellconc", y = "survival",
+  preview = TRUE)
 }
 \arguments{
 \item{pdata}{dataframe. MIC data with metadata, adjusted absorbance,

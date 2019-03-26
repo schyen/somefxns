@@ -19,23 +19,26 @@
 #' @return growth curve. ggplot.
 #' @export
 
-survivalCurve <- function(pdata, well_include=NULL, timepoint=99,
+survivalCurve <- function(pdata, well_include=NULL, timepoint=max(pdata$Repeat),
                           x='wellconc', y='survival', preview=TRUE) {
 
   scaleFUN <- function(x) signif(x, 4)
 
   # remove wells
-  pdata <- pdata[pdata$Well %in% well_include,]
+  if(!is.null(well_include)) {
+    pdata <- pdata[pdata$Well %in% well_include,]
+  }
 
   pdata[,x] <- as.numeric(pdata[,x])
   pdata <- pdata[pdata$Repeat %in% timepoint,]
   pdata$time_h <- pdata$minute/60
 
-
   pdata$label <- sprintf("Incub. time: %0.2f h",pdata$time_h)
   pdata[,x] <- as.numeric(pdata[,x])
   pdata <- pdata %>%
     arrange(!! sym(x))
+
+  y_upper <- 10*ceiling(max(pdata$survival)/10)
 
   p <- ggplot(pdata, aes_string(x=x, y=y)) +
     geom_vline(xintercept=0, colour='grey60') +
@@ -43,7 +46,7 @@ survivalCurve <- function(pdata, well_include=NULL, timepoint=99,
     # geom_hline(yintercept=10, colour='red', linetype='dashed') +
     # geom_smooth() +
     geom_point() +
-    scale_y_continuous(breaks=seq(120,0,-20)) +
+    scale_y_continuous(breaks=seq(y_upper,0,-20)) +
     scale_x_continuous(trans='log', breaks=unique(pdata[,x]),
                        labels = scaleFUN) +
     theme_bw(10)
