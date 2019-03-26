@@ -20,7 +20,10 @@ growthCurve <- function(pdata, well_include=NULL, x='minute', y='adj',
                         colour='wellconc', group='wellconc', preview=TRUE) {
 
   # remove wells
-  pdata <- pdata[pdata$Well %in% well_include,]
+  if(!is.null(well_include)) {
+    pdata <- pdata[pdata$Well %in% well_include,]
+  }
+
 
   # setting order of abx treatment
   factor_order <- sort(unique(pdata[ ,group]))
