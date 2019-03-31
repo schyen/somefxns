@@ -1,4 +1,4 @@
-# H1 somefxns
+# somefxns
 
 R package. Collection of custom functions that I commonly apply.
 
