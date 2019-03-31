@@ -1,4 +1,8 @@
-install instructions:
+somefxns
+
+R package. Collection of custom functions that I commonly apply.
+
+Install Instructions:
 ```
 # if devtools package not yet installed, install devtools first
 install_packages('devtools')
