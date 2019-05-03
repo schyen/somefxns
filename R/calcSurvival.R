@@ -41,7 +41,6 @@ calcSurvival <- function (full, ctrl_by = 'row', ctrl_label = 'growthctrl') {
 
   # calculate percent survival
   full <- full %>%
-    filter(Repeat == 40) %>%
     group_by(!! sym(ctrl_by), Repeat) %>%
     do(calcSurvival(.)) %>%
     as.data.frame()
