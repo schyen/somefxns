@@ -26,22 +26,22 @@ calcSurvival <- function (full, ctrl_by = 'row', ctrl_label = 'growthctrl') {
 
   # calculating percent survival
   calcSurvival <- function(d) {
-    growthctrl <- mean(abs(d$adj[d$welltype == ctrl_label]))
-
+    growthctrl <- abs(d$adj[d$welltype == ctrl_label])
     # only calculate survival if growth control well exists in current df
     if (!all(is.na(growthctrl))) {
-      growthctrl <- growthctrl[!is.na(growthctrl)]
+      growthctrl <- mean(growthctrl[!is.na(growthctrl)])
+
       d$survival <- round(abs(d$adj),3) / round(growthctrl,3) * 100
     }
     else {
       d$survival <- NA
     }
-
     return(d)
   }
 
   # calculate percent survival
   full <- full %>%
+    filter(Repeat == 40) %>%
     group_by(!! sym(ctrl_by), Repeat) %>%
     do(calcSurvival(.)) %>%
     as.data.frame()
