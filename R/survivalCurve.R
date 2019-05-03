@@ -38,7 +38,7 @@ survivalCurve <- function(pdata, well_include=NULL, timepoint=max(pdata$Repeat),
   pdata <- pdata %>%
     arrange(!! sym(x))
 
-  y_upper <- 10*ceiling(max(pdata$survival)/10)
+  y_upper <- 10*ceiling(max(pdata$survival[!is.na(pdata$survival)])/10)
 
   p <- ggplot(pdata, aes_string(x=x, y=y)) +
     geom_vline(xintercept=0, colour='grey60') +
