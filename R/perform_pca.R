@@ -25,6 +25,7 @@ perform_pca <- function(data, sampleID='sample_name', variable, value='value',
 
   #Getting column names of metadata and concentrations
   var <- as.character(unique(data[,variable]))
+  print(var)
   d_colname = c(variable,value)
   meta_colname = colnames(data)[!colnames(data) %in% d_colname]
 
