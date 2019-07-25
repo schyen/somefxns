@@ -25,7 +25,6 @@ perform_pca <- function(data, sampleID='sample_name', variable, value='value',
 
   #Getting column names of metadata and concentrations
   var <- as.character(unique(data[,variable]))
-  print(var)
   d_colname = c(variable,value)
   meta_colname = colnames(data)[!colnames(data) %in% d_colname]
 
@@ -37,7 +36,6 @@ perform_pca <- function(data, sampleID='sample_name', variable, value='value',
   #Casting data to wide format; includes qualifiers
   data.wide = reshape2::dcast(data=data, formula=form,
                     value.var=value)
-  print(data.wide)
   if(convert.NA==TRUE) {
     #converting NAs into 0
     data.wide[is.na(data.wide)] <- 0
