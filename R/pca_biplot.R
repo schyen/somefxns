@@ -48,14 +48,14 @@ pca_biplot <- function(data, metadata, colour = NULL, label = TRUE,
   print(pcx_summary)
 
   # plottig biplot--------------------------------------------------------------
-  p_biplot <- ggplot2::autoplot(cmdscale(pcx, eig = TRUE, data = metadata,
+  p_biplot <- ggplot2::autoplot(pcx, data = metadata,
                                 # specifying score labelling
                                 colour = colour, label = label,
                                 label.repel = TRUE,
                                 # specifying loading labelling
                                 loadings = loadings,
                                 loadings.label = loadings.label,
-                                loadings.label.colour = loadings.label.colour))
+                                loadings.label.colour = loadings.label.colour)
 
   p_biplot <- p_biplot +
     ggplot2::scale_shape_manual(values=21:25) +
