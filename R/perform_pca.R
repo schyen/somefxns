@@ -55,8 +55,10 @@ perform_pca <- function(data, sampleID='sample_name', variable, value='value',
       }
   }
   if(length(empty) > 0) {
-    msg <- sprintf('%s has concentration of zero in every sample\n', empty)
+    msg <- sprintf('Removing %s because it has has concentration of zero in every sample\n', empty)
     message(msg)
+
+    conc.wide <- conc.wide[,!colname(conc.wide) %in% empty]
   }
   #Converting concentration data to numeric class
   d <- as.data.frame(sapply(conc.wide, as.numeric))
